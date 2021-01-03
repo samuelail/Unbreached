@@ -11,7 +11,8 @@ Unbreached is a small package to check if your users are signing up for your ser
 ```
 const unbreached = require('unbreached');
 
-//This only checks the email address to see if has been breached
+/** This only checks the email address to see if has been breached.
+Note : Not sending an email will automatically result in false **/
 async function checkEmail() {
 
     const email = 'example@example.com';
@@ -27,7 +28,7 @@ async function checkEmail() {
 }
 
 /** This checks both the email and password. If no matching pair is found,
-It will result in false **/
+* It will result in false . Note: Not sending both an email and password will automatically result in false **/
 async function checkEmailandPassword() {
 
     const email = 'example@example.com';
