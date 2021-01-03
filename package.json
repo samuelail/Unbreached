@@ -1,6 +1,6 @@
 {
   "name": "unbreached",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small package to check if your users are accessing your service with compromized credentials (email and password)",
   "main": "index.js",
   "scripts": {
