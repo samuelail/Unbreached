@@ -8,7 +8,7 @@ async function checkEmail() {
 
     const email = 'example@example.com';
 
-    const isBreached = await unbreached.checkEmail()
+    const isBreached = await unbreached.checkEmail(email)
     console.log(isBreached)   // True or False
     if (isBreached === true) {
         console.log('Email compromized')

@@ -6,7 +6,7 @@ checkEmail(email) {
         if (!email)
         resolve(false);
         else 
-        resolve(false);
+        resolve(true);
     });
 },
 
