@@ -1,0 +1,28 @@
+{
+  "name": "unbreached",
+  "version": "1.0.0",
+  "description": "A small package to check if your users are accessing your service with compromized credentials (email and password)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelail/Unbreached.git"
+  },
+  "keywords": [
+    "password",
+    "security",
+    "secure",
+    "breached",
+    "credentials",
+    "unbreached",
+    "hacked"
+  ],
+  "author": "Samuel Ailemen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuelail/Unbreached/issues"
+  },
+  "homepage": "https://github.com/samuelail/Unbreached#readme"
+}
