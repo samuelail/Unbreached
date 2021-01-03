@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 module.exports = {
 /** This function only checks the email accross a database
 to see if there is a record of it being breached **/
@@ -6,8 +8,35 @@ checkEmail(email) {
         if (!email)
         resolve(false);
         else 
-        resolve(true);
+        var urlencoded = new URLSearchParams();
+        urlencoded.append("apiKEY", "YEqWsRCHDaw8WcFUsQWKmO"); //API Key from account.verified.ly
+        urlencoded.append("email", email);
+      
+
+        var requestOptions = {
+        method: 'POST',
+        body: urlencoded,
+        redirect: 'follow'
+        };
+
+    fetch("https://api.verified.ly/v1/pwned", requestOptions)
+    .then(response => response.text())
+    .then((result) => {
+        const res = JSON.parse(result)
+       // console.log(res.statusCode)
+        if (res.statusCode == 0) {
+            resolve(false);
+        } else {
+            resolve(true);
+        }
+    })
+    .catch(error => {
+        console.log('error', error)
+        resolve(false);
     });
+        });
+
+      
 },
 
 /** This function only checks both the email and password 
@@ -18,7 +47,34 @@ checkEmailPassword(email, password) {
         if (!email && !password)
         resolve(false);
         else 
-        resolve(true);
+        var urlencoded = new URLSearchParams();
+        urlencoded.append("apiKEY", "YEqWsRCHDaw8WcFUsQWKmO"); //API Key from account.verified.ly
+        urlencoded.append("email", email);
+        urlencoded.append("password", password);
+
+      
+
+        var requestOptions = {
+        method: 'POST',
+        body: urlencoded,
+        redirect: 'follow'
+        };
+
+    fetch("https://api.verified.ly/v1/pwned", requestOptions)
+    .then(response => response.text())
+    .then(result => {
+       // console.log(result)
+       const res = JSON.parse(result)
+        if (res.statusCode == 0) {
+            resolve(false);
+        } else {
+            resolve(true);
+        }
+    })
+    .catch(error => {
+        console.log('error', error)
+        resolve(false);
+    });
     });
 }
 }
